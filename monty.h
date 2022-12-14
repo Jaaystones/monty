@@ -16,7 +16,7 @@ extern int push_arg;
  * @prev: points to the previous element of the stack (or queue)
  * @next: points to the next element of the stack (or queue)
  * Description: doubly linked list node structure
- * for stack, queues, LIFO, FIFO Holberton project
+ * for stack, queues, LIFO, FIFO ALX project
  */
 typedef struct stack_s
 {
@@ -30,7 +30,7 @@ typedef struct stack_s
  * @opcode: the opcode
  * @f: function to handle the opcode
  * Description: opcode and its function
- * for stack, queues, LIFO, FIFO Holberton project
+ * for stack, queues, LIFO, FIFO ALX project
  */
 typedef struct instruction_s
 {
@@ -44,7 +44,7 @@ typedef struct instruction_s
  * @push_arg: function to handle the opcode
  * @buffer: pointer to
  * Description: opcode and its function
- * for stack, queues, LIFO, FIFO Holberton project
+ * for stack, queues, LIFO, FIFO ALX project
  */
 typedef struct global_variable
 {
@@ -52,14 +52,33 @@ typedef struct global_variable
 	int push_arg;
 	char *buffer;
 } global_var;
-
 extern global_var var_global;
+
+/**
+* struct bus_s - variables -args, file, line content
+* @arg: value
+* @file: pointer to monty file
+* @content: line content
+* @lifi: flag change stack <-> queue
+*
+* Description: carries values through the program
+*/
+typedef struct bus_s
+{
+	char *arg;
+	FILE *file;
+	char *content;
+	int lifi;
+}  bus_t;
+extern bus_t bus;
 
 void read_file(char *filename, stack_t **stack);
 char *parse_line(char *line, stack_t **stack, unsigned int line_number);
 typedef void (*instruct_func)(stack_t **stack, unsigned int line_number);
 instruct_func get_op_func(char *str);
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
+void addqueue(stack_t **head, int n);
+void f_queue(stack_t **head, unsigned int counter);
 
 /*Fuxntions Monty*/
 void _pall(stack_t **stack, unsigned int line_number);
