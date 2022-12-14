@@ -11,7 +11,8 @@ Files containing Monty byte codes usually have the .m extension. Most of the ind
 
 ## Environment
 
-Ubuntu 14.04 LTS sandbox via git bash.
+Files were compiles using Ubuntu 14.04 LTS sandbox via git bash. 
+All programs and functions were compiled with gcc 4.8.4 using flags -Wall -Werror -Wextra and -pedantic.
 
 ## Instructions
 
